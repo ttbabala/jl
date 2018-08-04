@@ -1,0 +1,150 @@
+/* pages/uc/uc.wxss */
+.boxone{
+  width: 99%;
+  height: 330rpx;
+  margin: 0 auto;
+  text-align: center;
+  marker-end: 10rpx;
+  border-radius: 20rpx;
+  border-bottom: 2rpx solid #C8C9CD;
+  background-image: url("https://nxbuilding.com/xcx-img/jielongbeijing-ba.jpg")
+} 
+.touxiang{
+  margin-top: 20rpx;
+}
+.name{
+  font-size: 35rpx;
+}
+/* .code{
+  font-size: 30rpx;
+} */
+.fuzhi{
+  font-size: 28rpx;
+  color:darkcyan;
+}
+.dibu{
+  width: 40%;
+  height:45rpx;
+  background-color:darkorange;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+.renzheng{
+  font-size: 28rpx;
+  color:#fff;
+  float: left;
+  margin-left: 28rpx;
+  margin-top: 3rpx;
+}
+.boxtwo{
+  width:94%;
+  height:120rpx;
+  margin: 0 auto;
+  padding:20rpx; 
+  
+}
+.xone{
+  width:32%;
+  height:120rpx;
+  float: left;
+  border-right: 2rpx solid #C8C9CD;
+}
+.xtwo{
+  width:35%;
+  height:120rpx;
+  float: left;
+  border-right: 2rpx solid #C8C9CD;
+}
+.xthree{
+  width:200rpx;
+  height:120rpx;
+  float: left;
+}
+.num{
+  font-size: 30rpx;
+  margin-left: 100rpx;
+  color: #EF6D2C;
+}
+.follow{
+  font-size: 30rpx;
+  display: flex;
+  margin-left: 49rpx;
+  margin-top: 20rpx;
+  color: #A6A8AC;
+}
+.num-one{
+  font-size: 30rpx;
+  margin-left: 120rpx;
+  color: #EF6D2C;
+}
+.follow-one{
+  font-size: 30rpx;
+  display: flex;
+  margin-left: 70rpx;
+  margin-top: 20rpx;
+  color: #A6A8AC;
+}
+.num-two{
+  font-size: 30rpx;
+  margin-left: 110rpx;
+  color: #EF6D2C;
+}
+.follow-two{
+  font-size: 30rpx;
+  display: flex;
+  margin-left: 90rpx;
+  margin-top: 20rpx;
+  color: #A6A8AC;
+}
+
+.gray-one{
+  width:100%;
+  height:25rpx;
+  background-color:#F0EFF5;
+}
+
+
+.wz-one{
+   margin-left: 35rpx;
+   font-size: 30rpx;
+   float: left;
+   margin-top:35rpx;
+}
+.ws-two{
+  width:100%;
+  height:100rpx;
+  border-bottom: 2rpx solid #C8C9CD;
+}
+.faqi{
+  width:100%;
+  height: 600rpx;
+  background-color: #f5f5f5;
+}
+.picture{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  margin-left: 22rpx; 
+  margin-top: -10rpx;
+}
+.picture-one{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  margin-left: 20rpx; 
+  margin-top: -10rpx;
+}
+.fbox{
+  width: 182rpx;
+  height: 130rpx;
+  float: left;
+  margin-left: 65rpx;
+  margin-top: 35rpx;
+}
+.wz{
+  display: flex;
+  float: left;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,6 @@
+<!--pages/uc/order/order.wxml-->
+<view class='box'>
+    <image src='/images/dingdan1.png' class='p-one'></image>
+    <image src='/images/xuxian2.png' class='p-two'></image>
+    <text class='query'>暂时没有参与过任何接龙活动哦</text>
+</view>

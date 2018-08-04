@@ -1,0 +1,4 @@
+<!--pages/message/message.wxml-->
+     <view class="box">
+         <text class='time'>客服服务时间：工作日9：00-18：00</text>
+     </view>

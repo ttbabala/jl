@@ -1,0 +1,54 @@
+/* pages/search/search.wxss */
+@import "../../../wxSearchView/wxSearchView.wxss";
+
+.title{
+  font-size: 32rpx;
+  line-height: 80rpx;
+  margin-left: 20rpx;
+}
+.cat-box{
+  width:98%;
+  height:450rpx;
+  margin: 0 auto;
+}
+.cat{
+  width:98%;
+  height: 180rpx;
+  margin: 0 auto;
+  line-height: 25rpx;
+}
+.scat{
+  width:24%;
+  height:180rpx;
+  float: left;
+}
+.cat-photo{
+  width:55%;
+  height:85rpx;
+  margin-left: 42rpx;
+  float: left;
+  margin-top: 20rpx;
+}
+.cat-name{
+  display:flex;
+  font-size: 28rpx;
+  color:#5c5c56;
+  margin-left: 35rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+.cat-nameone{
+  display:flex;
+  font-size: 30rpx;
+  color:#5c5c56;
+  margin-left: 58rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+.cat-photoone{
+  width:55%;
+  height:85rpx;
+  margin-left: 55rpx;
+  float: left;
+  margin-top: 20rpx;
+}

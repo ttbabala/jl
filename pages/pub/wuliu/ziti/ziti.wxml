@@ -1,0 +1,70 @@
+<!--pages/pub/wuliu/ziti/ziti.wxml-->
+<view class='box'>
+<form bindsubmit='zitiSubmit'>
+    <view class="topinfo"><text style="text-aligin:left;">*下列设置仅针对本次接龙有效，如需修改默认自提点，请前往“我的->物流管理”。</text></view>
+      <view wx:if="{{ishavaData}}"> <!--数据表中有数据 -->
+           <view wx:for="{{ztData}}" wx:key="{{index}}" wx:for-item="item" wx:for-index="idx">
+           <radio-group name="selectGroup" bindchange="listenerRadioGroup" class="blockinfo">
+            <radio bindtap="selRadio" value="{{item.id}}" style="width:10%;display:inline-flex;margin-left:15rpx;" checked="{{item.checked}}"/>
+              <view style="width:auto;display:inline-flex;overflow:hidden;margin-right:40rpx;">
+                {{item.addressInfo}}
+              </view>
+              <view data-id="{{ztData[idx].id}}" data-ztid="{{ztData[idx].ztid}}" data-aname="{{ztData[idx].addressName}}" data-city="{{ztData[idx].city}}" data-ainfo="{{ztData[idx].addressInfo}}" bindtap="editDbZtInfo" class="width:10%;height:40rpx;line-height:40rpx;display:inline-flex;"><image src="/images/mapdw.png" style="width:40rpx;height:40rpx;"></image></view>
+            </radio-group>
+           </view>
+           <input name="ztsub" type="text" style="display:none" value="{{selvalue}}"/>
+      </view>
+    <view class="noziti {{noziti?'show':'hidden'}}">
+      <image src='/images/ziti.png' class='p-one'></image>
+      <image src='/images/xuxian2.png' class='p-two'></image>
+      <text class='query'>暂时没有添加自提点哦</text>
+    </view>
+    <view class="zitilist {{zitilist?'show':'hidden'}}">
+    </view>
+    <view class="footer">
+      <button class="addziti" bindtap="showDialogBtn">新增自提点</button>
+      <button class="queding" formType="submit" >确定</button>
+    </view>
+</form>
+    <!--新增自提地址弹窗-->
+      <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+      <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">新增自提地址</view>
+      <view class="modal-content">
+      <view class="modal-input">
+          <textarea placeholder="请填写您的自提点详细地址" name="zitiInfo" bindinput="get_zitiinfo"></textarea>
+      </view>
+      <view class="modal-input">
+      <image src="/images/dizhi.png" style="float:left;width:40rpx;height:40rpx;line-height:40rpx;margin-top:20rpx;margin-right:-10rpx;"></image><text class="place" bindtap="openmap">{{city}}.{{addressName}}</text>
+      <input name="city" style="display:none" value="{{city}}"></input>
+      <input name="addressName" style="display:none" value="{{addressName}}"></input>
+      </view>
+      </view>
+      <view class="modal-footer">
+        <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+        <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">保存</view>
+      </view>
+    </view> 
+    <!--新增自提地址弹窗结束-->
+    <!--编辑自提地址弹窗-->
+      <view class="modal-mask" bindtap="hideZtPop" catchtouchmove="preventTouchMove" wx:if="{{showZtPop}}"></view>
+      <view class="modal-dialog" wx:if="{{showZtPop}}">
+      <view class="modal-title">编辑自提地址</view>
+      <view class="modal-content">
+      <view class="modal-input">
+          <textarea placeholder="{{ztSingle[1].info}}" name="zitiInfo" bindinput="get_zitiinfo"></textarea>
+      </view>
+      <view class="modal-input">
+      <image src="/images/dizhi.png" style="float:left;width:40rpx;height:40rpx;line-height:40rpx;margin-top:20rpx;margin-right:-10rpx;"></image><text class="place" bindtap="openmap">{{ztSingle[2].city}}.{{ztSingle[3].addressName}}</text>
+      <input name="city" style="display:none" value="{{ztSingle[2].city}}"></input>
+      <input name="addressName" style="display:none" value="{{ztSingle[3].addressName}}"></input>
+      </view>
+      </view>
+      <view class="modal-footer">
+        <view class="btn-cancel" bindtap="editCancel" data-status="cancel">取消</view>
+        <view class="btn-confirm" bindtap="editConfirm" data-id="{{ztSingle[0].id}}" data-status="confirm">保存</view>
+      </view>
+    </view> 
+    <!--编辑自提地址弹窗结束-->
+</view>
+

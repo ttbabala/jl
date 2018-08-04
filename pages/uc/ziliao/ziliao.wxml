@@ -1,0 +1,34 @@
+<!--pages/uc/ziliao/ziliao.wxml-->
+<form bindsubmit='shSubmit'>
+<view class='grayline'></view>
+<input type="text" name="openid" style="display:none" value="{{openId}}"/>
+<view class="name">
+    <text class='name-one'>姓名</text>
+    <input class="name-two" placeholder="{{userData.userName}}" value="{{userData.userName}}" type="text" name="uname" bindinput="get_uname"></input>
+</view>
+<view class='grayline'></view>
+<view class="name">
+    <text class='name-one'>手机</text>
+     <input class="name-two" placeholder="{{userData.uphone}}" type="number" name="uphone" value="{{userData.uphone}}" bindinput="get_phone"></input>
+</view>
+<view class='grayline'></view>
+<view class="name">
+    <text class='weixin-one'>微信</text>
+    <input class="name-two" placeholder="{{userData.uwxnumber}}" type="text" name="uwxnumber" value="{{userData.uwxnumber}}" bindinput="get_uwxnumber"></input>
+</view>
+<view class='grayline'></view>
+<view class="name">
+    <text class='name-one'>邮箱</text>
+    <input class="name-two" placeholder="{{userData.uemail}}" type="text" name="uemail" value="{{userData.uemail}}" bindinput="get_uemail" maxlength="100"></input>
+</view>
+  <view class='grayline'></view>
+  <view class="address">
+      <text class='address-one'>收货地址</text>
+      <textarea class="name-two" placeholder="{{userData.ugetaddress}}" name="ushaddress" value="{{userData.ugetaddress}}" bindinput="get_ushaddress" ></textarea>
+  </view>
+  <view class='grey'>
+    <view class='green'>
+      <button formType="submit" hover-class="other-button-hover" style="background-color:green;color:#fff;width:90%;margin-top:50rpx;">保存</button>
+    </view>
+  </view>
+</form>

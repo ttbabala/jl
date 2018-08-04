@@ -1,0 +1,38 @@
+<!--pages/pub/wuliu/samecity/samecity.wxml-->
+<view class='box'>
+<form bindsubmit="formAddSamecitySubmit" bindreset="formReset">
+    <view class="des_info">
+    *下列设置仅对本次接龙生效，如果修改默认配送设置，请前往我的-默认配送设置
+    </view>
+    <view class="des_samecity">
+        <textarea placeholder="{{ishavaData?scData[0].des:pldes}}" placeholder-style="color:#c4c4c4" name="samecityInfo" value="{{ishavaData?scData[0].des:''}}" class="textarea_samecity" bindinput="DesinfoChange"></textarea>
+    </view>
+    <view class="select_time">
+      <text style="font-size:26rpx;float:left;display:inline-flex;width:25%;">配送时间:</text>
+      <view class="stTime">
+       <picker name="startTime" mode="time" value="{{scData[0].startTime}}" start="09:00" end="17:30" bindchange="startTimeChange">
+        <view wx:if="{{ishavaData}}">
+          <text style="color:#c4c4c4;font-size:26rpx;">{{scData[0].startTime}}</text>
+        </view>
+        <view wx:else>
+          <text style="color:#c4c4c4;font-size:26rpx;">{{st_time}}</text>
+        </view>
+      </picker>
+      </view>
+      <text style="float:left">-</text>
+      <view class="edTime">
+       <picker name="endTime" mode="time" value="{{scData[0].endTime}}" start="09:00" end="17:30" bindchange="endTimeChange">
+       <view wx:if="{{ishavaData}}">
+       <text style="color:#c4c4c4;font-size:26rpx;">{{scData[0].endTime}}</text>
+       </view>
+       <view wx:else>
+       <text style="color:#c4c4c4;font-size:26rpx;">{{ed_time}}</text>
+       </view>
+      </picker>
+      </view>
+    </view>
+    <view class="footer">
+      <button class="queding" formType="submit">确定</button>
+    </view>
+</form>
+</view>

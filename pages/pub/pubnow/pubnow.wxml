@@ -1,0 +1,125 @@
+<!--pages/pub/pubnow/pubnow.wxml-->
+<view class="selectTab">
+<form bindsubmit='goodsSubmit'>
+<view class="nav bc_white">
+<view class="{{selected?'red_article':'default_article'}}" bindtap="selected">设置接龙基本信息</view>
+<view class="{{selected1?'red_goods':'default_goods'}}" bindtap="selected1">设置商品和营销功能</view>
+</view>
+<view class="{{selected?'show':'hidden'}}">
+  <view class="jl-zhuti"> 
+    <input type="text" name="openid" style="display:none" value="{{openId}}"/>
+    <input placeholder="接龙主题" type="text" name="goodsZhuti" bindinput="get_zhuti"></input>
+  </view>
+  <view class="jl-jieshao">
+    <textarea placeholder="介绍您的接龙活动，方便大家参与了解。" name="goodsInfo" bindinput="get_goodsinfo" ></textarea>
+  </view>
+  <view class="jl-photo">
+  <image src="/images/upimg-icon.png" style="width:80rpx;height:80rpx;" bindtap="choosephoto"></image><text class="jl-photo-title" bindtap="choosephoto">上传接龙图片</text>
+  </view>
+  <view class="jl-hidden-photo {{showphoto?'show':'hidden'}}" style="height:{{hpHeight}}">
+    <view wx:for="{{goodsPhoto}}" wx:for-item="item" wx:key="*this">
+       <view class="signle-block">
+        <image src="{{item}}" style="width:150rpx;height:150rpx;" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+         <view class="delete-btn" data-index="{{index}}" bindtap="deleteImg"><image src="/images/delphoto.png" style="width:50rpx;height:50rpx"></image>
+         </view>
+       </view>
+    </view>
+    <input type="text" name="goodsPhoto" style="display:none" value="{{goodsPhoto}}" />
+    <input type="text" name="gp" style="display:none" value="{{gp}}" />
+  </view>
+  <view class="jl-address" bindtap='openmap'>
+    <image src="/images/address-icon.png" style="width:40rpx;height:40rpx;vertical-align:middle;"></image>
+    <text style="width:90%;vertical-align:middle;">{{addressName}}（{{addressInfo}}）</text>
+    <input name="addressName" style="display:none" value="{{addressName}}"></input>
+    <input name="addressInfo" style="display:none" value="{{addressInfo}}"></input>
+  </view>
+  <view class="jl-switch">
+    <text class="right-text">设置起购价</text>
+    <switch bindchange="setprice" class="right-swich" name="switchStartPrice"/>
+  </view>
+  <view class="jl-hidden-switch {{showprice?'show':'hidden'}}" style="border:none;" >
+    <text class="right-text">起购价</text>
+    <input placeholder="请输入起购价" type="text" class="right-hidden-input" name="startPrice" bindinput="get_startprice" value="{{startPrice}}"></input>
+  </view>
+  <view class="jl-switch">
+    <text class="right-text">设置截止时间</text>
+    <switch bindchange="setdate" class="right-swich"/>
+  </view>
+  <view class="jl-hidden-switch {{showdate?'show':'hidden'}}" style="border:none;" >
+    <text class="right-text">截止时间</text>
+      <picker mode="date" value="{{date}}" bindchange="changeDate" class="right-swich">
+      <input placeholder="{{date}}" type="text" class="setdate" name="endtime" value="{{date}}" bindinput="get_setdata"></input>
+  </picker>
+  </view>
+  <view class="jl-switch">
+    <text class="right-text">客户自提设置</text>
+    <switch bindchange="setziti" class="right-swich"/>
+  </view>
+  <view class="jl-hidden-switch {{showziti?'show':'hidden'}}" style="border:none;" bindtap='setzitiNow'>
+    <text class="right-text">设置自提点</text>
+    <view wx:if="{{havaztConfig}}" style="float:right;margin-right:10rpx;color:green">
+      <text>已配置</text>
+       <input type="text" name="ztSubInfo" style="display:none" value="{{ztsubinfo}}"/>
+    </view>
+    <view style="float:right;margin-right:20rpx;" wx:else>
+      <text>></text>
+    </view>
+  </view>
+  <view class="jl-switch">
+    <text class="right-text">同城配送设置</text>
+    <switch bindchange="setSameCity" class="right-swich"/>
+  </view>
+  <view class="jl-hidden-switch {{showsamecity?'show':'hidden'}}" style="border:none;" bindtap='setSameCityNow'>
+    <text class="right-text">配送设置</text>
+    <text style="float:right;margin-right:20rpx;">></text>
+  </view>
+  <view class="jl-switch">
+    <text class="right-text">异地物流设置</text>
+    <switch bindchange="setOtherCity" class="right-swich"/>
+  </view>
+  <view class="jl-hidden-switch {{showothercity?'show':'hidden'}}" style="border:none;" bindtap='setOtherCityNow'>
+    <text class="right-text">设置异地物流</text>
+    <view wx:if="{{havaocConfig}}" style="float:right;margin-right:10rpx;color:green">
+      <text>已配置</text>
+      <input type="text" name="ocSubInfo" style="display:none" value="{{ocsubinfo}}"/>
+    </view>
+    <view style="float:right;margin-right:20rpx;" wx:else>
+      <text>></text>
+    </view>
+  </view>
+  <button bindtap="nextStep" hover-class="other-button-hover" style="margin-top:20rpx;background-color:#ff8c00;color:#fff">继续下一步</button> 
+</view>
+<view class="{{selected1?'show':'hidden'}}">
+ <view class="jl-goodblock"> 
+    <text class="left-info">商品名称：</text>
+    <input placeholder="请输入商品名称" name="goodsName" type="text" class="right-input"/>
+ </view>
+   <view class="jl-goodblock"> 
+    <text class="left-info">商品分类：</text>
+    <picker name="goodsCat" mode="selector" bindchange="bindPickerChange" value="{{catarray[index].catid}}" range="{{catRangeArray}}" >
+      <view class="picker">
+        {{catarray[index].catname}}
+      </view>
+    </picker>
+  </view> 
+   <view class="jl-goodblock"> 
+    <text class="left-info">商品规格：</text>
+    <input name="goodsRules" placeholder="请输入商品规格" type="text" class="right-input"/>
+   </view>
+    <view class="jl-goodblock"> 
+    <text class="left-info">商品价格：</text>
+    <input name="goodsPrice" placeholder="请输入商品价格" type="text" class="right-input"/>
+   </view>
+     <view class="jl-goodblock"> 
+    <text class="left-info">商品库存：</text>
+    <input name="goodsNums" placeholder="请输入商品库存" type="text" class="right-input"/>
+ </view>
+      <view class="jl-goodblock"> 
+    <text class="left-info">高级营销：</text>
+    <switch bindchange="settime" style="float:right;margin-right:30rpx;"/>
+ </view>
+   <button loading="{{loading}}" plain="{{plain}}"
+disabled="{{disabled}}" formType="submit" hover-class="other-button-hover" style="margin-top:20rpx;background-color:#ff8c00;color:#fff">发布接龙</button>
+</view>
+</form>
+</view>

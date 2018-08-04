@@ -1,0 +1,216 @@
+/* pages/personal/personal.wxss */
+.wrapper{
+  width:100%;
+  margin: 0 auto;
+}
+.box{
+  width:99%;
+  height:280rpx;
+  border-top: 2rpx solid #f5f5f5;
+}
+.box-one{
+  width:95%;
+  height:260rpx;
+  border-radius: 20rpx;
+  background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531461179041&di=981ee4ad61759596cfd401144e0505ce&imgtype=0&src=http%3A%2F%2Ftupian.aladd.net%2F2014%2F10%2F2333.jpg");
+  margin-left:20rpx;
+  margin-top:15rpx;
+}
+.touxiang{
+  width:150rpx;
+  height:150rpx;
+  border-radius: 80rpx;
+  margin-left:40rpx;
+  margin-top:60rpx;
+}
+.name{
+  font-size: 30rpx;
+  color: #fff;
+  display: flex;
+  margin-left:200rpx;
+  margin-top:-140rpx;
+}
+.vcertification{
+  width:50rpx;
+  height:50rpx;
+  vertical-align:middle;
+  display: flex;
+  margin-left:430rpx;
+  margin-top:-42rpx;
+}
+.nameone{
+  font-size: 30rpx;
+  color: #fff;
+  display: flex;
+  margin-left:200rpx;
+  margin-top:20rpx;
+}
+.renzheng{
+  width:100rpx;
+  height: 40rpx;
+  font-size:25rpx;
+  color:#fff;
+  background-color:red;
+  border-radius: 10rpx;
+  margin-left:410rpx;
+  margin-top:-40rpx;
+  display: flex;
+  line-height: 40rpx;
+  text-align:center;
+}
+.boxtwo{
+width:94%;
+height:80rpx;
+margin: 0 auto;
+padding:20rpx; 
+border-bottom:  2rpx solid #C8C9CD;
+border-top:  2rpx solid #C8C9CD;
+}
+.xone{
+width:32%;
+height:80rpx;
+float: left;
+border-right: 2rpx solid #C8C9CD;
+}
+.xtwo{
+width:35%;
+height:80rpx;
+float: left;
+border-right: 2rpx solid #C8C9CD;
+}
+.xthree{
+width:200rpx;
+height:80rpx;
+float: left;
+}
+.num{
+font-size: 30rpx;
+margin-left: 100rpx;
+color: #EF6D2C;
+}
+.follow{
+font-size: 30rpx;
+display: flex;
+margin-left: 80rpx;
+margin-top: 2rpx;
+color: #A6A8AC
+}
+.num-one{
+font-size: 30rpx;
+margin-left: 120rpx;
+color:#1296db;
+}
+.follow-one{
+font-size: 30rpx;
+display: flex;
+margin-left: 95rpx;
+margin-top: 2rpx;
+color: #A6A8AC
+}
+.num-two{
+font-size: 30rpx;
+margin-left: 100rpx;
+color:goldenrod;
+}
+.follow-two{
+font-size: 30rpx;
+display: flex;
+margin-left: 98rpx;
+margin-top: 2rpx;
+color: #A6A8AC
+}
+
+.content{
+  width:99%;
+  margin:0 auto;
+  padding:0;
+}
+.userinfo{
+  width:100%;
+  height:420rpx;
+  border-bottom: 2rpx solid #C8C9CD;
+}
+.Abulk{
+  display:flex;
+  margin-top:15rpx;
+  font-size: 32rpx;
+  margin-left:20rpx;
+}
+.time{
+  margin-top:20rpx;
+  font-size: 33rpx;
+  color:darkgrey;
+  display:flex;
+  margin-left:20rpx;
+}
+.good{
+  margin-left: 20rpx;
+  margin-top:20rpx;
+  display:flex;
+  float: left;
+}
+.address{
+  display:flex;
+  float: left;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color:darkgray;
+  margin-left:20rpx;
+}
+
+.nono{
+  width: 100%;
+  height: 70rpx;
+  background-color:#C8C9CD;
+}
+.no-one{
+  width: 100%;
+  font-size: 30rpx;
+  color: #fff;
+  margin-left: 220rpx;
+
+}
+
+/*底部菜单*/
+.footer {
+	background: #f9f9f9;
+	width: 100%;
+	display: flex; 
+	flex-direction: row; 
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+}
+
+.guanzhu {
+	float: right;
+	line-height: 100rpx;
+	text-align: center;
+	width: 60%;
+	height: 100rpx;
+	background-color:#ff8c00;
+	color: #fff;
+	font-size: 28rpx;
+	border-radius: 0px;
+  background-image:url('https://nxbuilding.com/xcx-img/guanzhuIcon.png');
+  background-repeat: no-repeat;
+  background-size:30rpx 30rpx;
+  background-position: 22%;
+}
+.home {
+	float: left;
+	line-height: 100rpx;
+	text-align: center;
+	width: 40%;
+	height: 100rpx;
+	color:#777777;
+	font-size: 28rpx;
+	border-radius: 0px;
+  background-image:url('https://nxbuilding.com/xcx-img/homeIcon.png');
+  background-repeat: no-repeat;
+  background-size:30rpx 30rpx;
+  background-position: 22%;
+}
+.home::after{
+  border:none;
+}

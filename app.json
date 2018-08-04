@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/pub/pub",
+    "pages/pub/pubnow/pubnow",
+    "pages/uc/uc",
+    "pages/uc/order/order",
+    "pages/uc/ziliao/ziliao",
+    "pages/goods/goods",
+    "pages/personal/personal",
+    "pages/uc/messages/messages",
+    "pages/index/searchs/searchs",
+    "pages/auth/auth",
+    "pages/pub/wuliu/ziti/ziti",
+    "pages/pub/wuliu/samecity/samecity",
+    "pages/pub/wuliu/othercity/othercity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "群团购接龙",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#2c2c2c",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home-icon-bf.png",
+        "selectedIconPath": "images/home-icon-yellow.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/pub/pub",
+        "iconPath": "images/release-icon-bf.png",
+        "selectedIconPath": "images/release-icon-yellow.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/uc/uc",
+        "iconPath": "images/mine-icon-bf.png",
+        "selectedIconPath": "images/mine-icon-yellow.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

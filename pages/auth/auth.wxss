@@ -1,0 +1,7 @@
+/* pages/auth/auth.wxss */
+.auth{
+  width:98%;
+  height:auto;
+  margin-top:30rpx;
+  margin:0 auto;
+}

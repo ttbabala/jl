@@ -1,0 +1,37 @@
+<!--pages/pub/pub.wxml-->
+  <view class='box'>
+    <view class="topbox">
+     <view class="topboxone">
+         <text class='number-left'>1588</text>
+         <text class='text-left'>接龙数量</text>
+     </view>
+   <view class="topboxone"> 
+         <text class='number-middle'>8888</text>
+         <text class='text-middle'>参与人数</text>
+        </view>
+   <view class="topboxtwo"> 
+         <text class='number-right'>15w+</text>
+         <text class='text-right'>浏览访问</text>
+       </view>
+    
+    <!-- <button loading="{{loading}}" plain="{{plain}}"
+disabled="{{disabled}}" bindtap="navinow" hover-class="other-button-hover" style="background-color:#ff8c00;color:#fff;width:90%;margin-top:50rpx;"> 马上发布接龙 </button>  -->
+
+<!--发布接龙按钮go-->
+  <view class='release'>
+        <text class='release-wz1'>发布团购接龙开始卖货</text>
+      <view class='release-wz2'>
+         <button loading="{{loading}}" plain="{{plain}}"
+disabled="{{disabled}}" bindtap="navinow" hover-class="other-button-hover" style="background-color:#ff8c00;color:#fff;width:90%;margin-top:50rpx;">马上发布接龙</button> 
+      </view>
+   </view>
+<!--发布接龙按钮end-->
+</view>
+<view class="fudong">
+  <view class="fudongimg"><image src="/images/shouce.png" style="width:40rpx;height:40rpx;"/><text class="sm">使用手册</text></view>
+  <view class="fudongimg"><image src="/images/mianze.png" style="width:40rpx;height:40rpx;"/><text class="sm">免责声明</text></view>
+  <view class="fudongimg"><image src="/images/wenhao.png" style="width:40rpx;height:40rpx;"/><text class="sm">常见问题</text></view>
+</view>
+</view>
+
+  

@@ -1,0 +1,216 @@
+<!--pages/goods/goods.wxml-->
+<view class="userinfo-top">
+      <image src="{{goods[0].touxiang}}" class='touxiang-top'></image>
+      <text class="nickname-top">{{goods[0].nickname}}</text>
+</view>
+
+<!-- 广告 -->
+<view class="ad">
+<!-- <image src='/images/home-ad.jpg' style="width:100%; height:300rpx;"></image> -->
+<swiper autoplay='true' indicator-dots='true' indicator-color='#fff' indicator-active-color='#ff8c00' style="width:100%; height:650rpx;">
+<block wx:for="{{goods[0].goodsPhoto}}" wx:for-index="idx" wx:for-item="item">
+  <swiper-item>
+  <image src='http://localhost/jielong/{{item}}' style="width:100%; height:650rpx;"></image> 
+  </swiper-item>
+</block>
+</swiper>
+</view>
+<!-- 广告end -->
+<!--pages/goods/goods.wxml-->
+<view class="fudong">
+  <image src="/images/qrcode.png" class="fudongimg" bindtap="popqrcode"/>
+  <button open-type="share" class="fudongbutton" style="float:right;"></button>
+</view>
+<view class="{{flagqr?'hidden_qr':'show_qr'}}">
+  <view style="margin:0 auto;text-align:center">
+    <image src="/images/test-qr.jpg" class="qrimg"/>
+    <text class="qrtext">点击小程序码保存可转发到朋友圈</text>
+    <text class="qrtext">点击右上角...可转发给朋友</text>
+    <button class="knowBtn" bindtap='closepopqr'>我知道了</button>
+  </view>
+</view>
+
+<!--商品详情go-->
+<view class="userinfo">
+      <text class="abulk">{{goods[0].goodsZhuti}}</text>
+      <text class='stock-money'>￥{{goods[0].goodsPrice}}.00/{{goods[0].goodsRules}}</text>
+    <view class='stock-two'>
+      <text class="abulk-two">库存：{{goods[0].goodsNum}}</text>
+      <text class="abulk-tree">销量：0</text>
+    </view>
+</view>
+<!--商品详情end-->
+<view class='grayline-one'></view>
+
+<!--商品详情2go-->
+<view class='commodity-box'>
+   <image src='/images/huaduo.png' class='p-details'></image>
+   <text class='details'>商品详情</text>
+      <view class="content">
+        <text class="content-one">{{goods[0].goodsDes}}</text>
+      </view> 
+</view>
+<!--商品详情2end-->
+<view class='grayline'></view>
+<!--支持同城配送go-->
+<view class='tbox-tongcheng'>
+   <view class='tcps'>
+        <view wx:if="{{goods[0].samecity == 1}}">
+          <image src='/images/duihao.png' class='p-one-tongcheng'></image>
+          <text class='wz-one-tongcheng'>支持同城配送</text>
+        </view>
+        <view wx:if="{{goods[0].goodsZiti != 0}}">
+          <image src='/images/duihao.png' class='p-one-tongcheng'></image>
+          <text class='wz-one-tongcheng'>支持自提</text>
+        </view>
+        <view wx:if="{{goods[0].goodsOc != 0}}">
+          <image src='/images/duihao.png' class='p-one-tongcheng'></image>
+          <text class='wz-one-tongcheng'>支持异地物流</text>
+        </view>
+  </view>
+  </view>
+  <view class="{{goods[0].goodsZiti?'show':'hidden'}}">
+   <view class="tcps">
+         <image src='/images/fabudizhi.png' class='p-one-tongcheng'></image>
+         <text class='wz-one-tongcheng'>{{goods[0].ztProvince}}{{goods[0].ztCity}}\t{{goods[0].ztAddressName}}{{goods[0].ztAddressInfo}}</text>
+   </view> 
+  </view>
+<view class='tbox-tongcheng'>
+        <view class='tcps'>
+             <image src='/images/riqi.png' class='p-one-tongcheng'></image>
+             <text class='wz-one-tongcheng'>开始时间：{{goods[0].goodsPubTime}}</text>
+         </view>
+ </view>
+<view class='tbox-tongcheng'>
+       <view class='tcps'>
+             <image src='/images/jiezhiriqi.png' class='p-one-tongcheng'></image>
+             <text class='wz-one-tongcheng'>截止时间：{{goods[0].goodsEndTime}}</text>
+    </view>
+</view>
+<view class='tbox-tongcheng'>
+        <view class='tcps'>
+              <image src='/images/dianhua.png' class='p-one-tongcheng'></image>
+              <text class='wz-one-tongcheng'>{{goods[0].uphone}}({{goods[0].uname}})</text>
+        </view>
+</view>
+<view class='grayline'></view>
+<!--数量及库存go-->
+<view class='sbox'>
+  <view class="bigbox">
+     <view class='p-phone'>
+      <image src='http://localhost/jielong/{{goods[0].goodsPhoto[0]}}' style='width:200rpx;height:200rpx;' ></image>
+     </view>
+    <view class='wenzi'>
+      <text class='price'>{{goods[0].goodsName}}</text>
+      <text class='stock'>￥{{goods[0].goodsPrice}}/{{goods[0].goodsRules}}</text>
+      <text class='stock-one'>库存\t{{goods[0].goodsNum}}</text>
+    </view>
+    <!-- 处理商品加减start-->
+    <view>
+      <view class="stepper">
+      <!-- 减号 -->
+      <text class="normal" data-index="{{index}}" bindtap="bindMinus" data-price="{{goods[0].goodsPrice}}">-</text>
+      <!-- 数值 -->
+      <input type="number" data-index="{{index}}" bindchange="bindManual" value="{{goods_num}}" />
+      <!-- 加号 -->
+      <text class="normal" data-index="{{index}}" data-price="{{goods[0].goodsPrice}}"bindtap="bindPlus">+</text>
+      </view>
+    </view>
+    <!-- 处理商品加减end-->
+  </view>
+</view>
+<!--底部go-->
+ <view class='boxtwo'>
+        <view class='xone'>
+            <text class='num'>122</text>
+            <text class='follow'>浏览(人)</text>
+        </view>
+        <view class='xtwo'>
+            <text class='num-one'>0</text>
+            <text class='follow-one'>参与接龙(人)</text>
+        </view>
+        <view class='xthree'>
+            <text class='num-two'>0.00</text>
+            <text class='follow-two'>接龙金额(元)</text>
+        </view>
+ </view>
+
+
+<!--参与记录go-->
+ <view class='box-four'>
+    <text class='wz-four'>参与记录</text>
+    <view class='canyu'>
+    <text class='wz-four-one'>NO.1</text>
+    <image src='/images/touxiang1.jpg' class='touxiang-two'></image>
+    <text class='wz-four-trees'>蓝天白云</text>
+    <text class='wz-four-trees-san'>+1</text>
+    <text class='wz-four-trees-one'>2018-07-05</text>
+    <text class='wz-four-trees-two'>18:00</text>
+    </view>
+  </view>
+  <view class='gray-one'></view>
+  <view class='box-four-one'></view>
+
+
+<!--订单弹窗-->
+<view class="orderpop">
+    <!-- 单独块 --><view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showOrderPop}}"></view><!-- 单独块结束 -->
+    <!-- "modal-dialog" Start -->
+    <view class="modal-dialog" wx:if="{{showOrderPop}}">
+        <view class="modal-title">确认订单</view>
+        <!-- "modal-content" Start -->
+        <view class="modal-content">
+          <view class="modal-input" style="height:160rpx;">
+            <view class="orderinfo">
+              <text class="model-text" style="width:50%;">{{goods[0].goodsName}}</text>
+              <text class="model-text" style="width:20%;color:green">+{{goods_num}}</text>
+              <text class="model-text" style="width:30%;color:red;padding-left:160rpx;">￥{{goods[0].goodsPrice}}</text>
+            </view>
+            <view class="totalprice">
+                <text style="margin-left:70%;line-height:100rpx;height:100rpx;color:#A6A8AC;padding-bottom:margin-bottom:30rpx;">合计：</text><text style="font-size:32rpx;color:red">￥{{tp}}</text>
+            </view>
+          </view>
+          <view class="modal-input" style="height:auto;">
+              <view class="uinfo">
+                <text class="infotext">姓名：</text><input placeholder="{{uiData.userName}}"  type="text" name="uname" bindinput="get_uname" class="infoinput" />
+              </view>
+              <view class="uinfo">
+                <text class="infotext">手机：</text><input placeholder="{{uiData.uphone}}" type="number" name="uphone" bindinput="get_phone" class="infoinput"/>
+              </view>
+              <view class="uinfo-address">
+                <text class="infotext">收货地址：</text><textarea placeholder="{{uiData.ugetaddress}}" name="shaddress" class="infotextarea" bindinput="get_ugeaddress" ></textarea>
+              </view>
+              <view class="uinfo-beizhu">
+                <text class="infotext">备注：</text><textarea placeholder="请输入其它备注信息" name="beizhu" class="infotextarea" value=""></textarea>
+              </view>
+            </view>
+            <input name="city" style="display:none" value="{{city}}"></input>
+            <input name="addressName" style="display:none" value="{{addressName}}"></input>
+        </view>
+        <!-- "modal-content" End -->
+        <view class="modal-footer">
+          <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+          <view class="btn-confirm"  data-gid="{{goods[0].goodsId}}" data-num="{{goods_num}}" data-price="{{goods[0].goodsPrice}}" data-totalprice="{{tp}}" data-uname="{{uiData.userName}}" data-uphone="{{uiData.uphone}}" data-shaddress="{{uiData.ugetaddress}}" bindtap="createOrder" data-status="confirm">微信支付:￥{{tp}}</view>
+        </view>
+    </view>
+    <!-- "modal-dialog" End -->
+</view>
+<!--订单弹窗结束-->
+
+<view class="footer">
+  <!--<view class="favor">
+    <image src="../../../images/favor.png" class="favor-image" />
+    <text class="favor-text">收藏</text>
+  </view>-->
+  <button class="home" bindtap="navihome">首页</button>
+  <button class="pub" bindtap="navipub">发布接龙</button>
+  <button class="buy" data-gid="{{goods[0].goodsId}}" data-num="{{goods_num}}" data-price="{{goods[0].goodsPrice}}" data-totalprice="{{totalprice}}" bindtap="navibuy">
+    <view class="buyPrice" style="margin-top:25rpx;font-size:28rpx;" wx:if="{{goods_num == 1}}">已选:{{goods[0].goodsPrice}}</view>
+    <view class="buyPrice" style="margin-top:25rpx;font-size:28rpx;" wx:else>已选:{{totalprice}}</view>
+    <view class="buyPrice" style="font-size:32rpx;margin-top:10rpx;">立即购买(起购\t{{goods[0].goodsStartPrice}})</view>
+  </button>
+</view>
+
+
+
+

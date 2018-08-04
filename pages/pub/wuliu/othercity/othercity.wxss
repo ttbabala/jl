@@ -1,0 +1,167 @@
+/* pages/pub/wuliu/othercity/othercity.wxss */
+.box{
+  width: 100%;
+  height:1400rpx;
+  margin:0 aotu;
+  background-color: #F4F3F3;
+}
+.topinfo{
+  width:96%;
+  padding-top:20rpx;
+  font-size:28rpx;
+  color:#bfbfbf;
+  margin-left:auto;
+  margin-right:auto;
+}
+.nooc{
+  width:100%;
+  margin-top:20rpx;
+}
+.p-one{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 280rpx;
+  margin-left:240rpx;
+}
+.p-two{
+  width: 690rpx;
+  height: 29rpx;
+  margin-left:50rpx;
+}
+.query{
+  width:100%;
+  height:32rpx;
+  color: #bfbfbf;
+  font-size: 25rpx;
+  margin-left:35%;
+}
+
+/*底部菜单*/
+.footer {
+	background: #f9f9f9;
+	width: 100%;
+	display: flex; 
+	flex-direction: row; 
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+}
+
+.queding {
+	float: right;
+	line-height: 100rpx;
+	text-align: center;
+	width: 50%;
+	height: 100rpx;
+	background-color:#ff8c00;
+	color: #fff;
+	font-size: 28rpx;
+	border-radius: 0px;
+  background-image:url('https://nxbuilding.com/xcx-img/quedingIcon.png');
+  background-repeat: no-repeat;
+  background-size:30rpx 30rpx;
+  background-position: 29%;
+}
+.addziti {
+	float: left;
+	line-height: 100rpx;
+	text-align: center;
+	width:50%;
+	height: 100rpx;
+	color:#777777;
+	font-size: 28rpx;
+	border-radius: 0px;
+  background-image:url('https://nxbuilding.com/xcx-img/addzitiIcon.png');
+  background-repeat: no-repeat;
+  background-size:30rpx 30rpx;
+  background-position: 22%;
+}
+.addziti::after{
+  border:none;
+}
+
+/*弹窗*/
+.modal-mask {
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+background: #000;
+opacity: 0.5;
+overflow: hidden;
+z-index: 9000;
+color: #fff;
+}
+.modal-dialog {
+width: 90%;
+overflow: hidden;
+position: fixed;
+top: 10%;
+left: 0;
+z-index: 9999;
+background: #fff;
+margin-left:5%;
+border-radius:1%;
+}
+.modal-title {
+padding-top: 50rpx;
+font-size: 36rpx;
+color: #030303;
+text-align: center;
+}
+.modal-content {
+padding: 50rpx 32rpx;
+}
+.modal-input {
+display: flex;
+background: #fff;
+border-bottom: 2rpx solid #ddd;
+border-radius: 4rpx;
+font-size: 28rpx;
+}
+.input {
+width: 100%;
+height: 82rpx;
+font-size: 28rpx;
+line-height: 28rpx;
+padding: 0 20rpx;
+box-sizing: border-box;
+color: #333;
+}
+input-holder {
+color: #666;
+font-size: 28rpx;
+}
+.modal-footer {
+display: flex;
+flex-direction: row;
+height: 86rpx;
+border-top: 1px solid #dedede;
+font-size: 34rpx;
+line-height: 86rpx;
+}
+.btn-cancel {
+width: 50%;
+color: #666;
+text-align: center;
+border-right: 1px solid #dedede;
+}
+.btn-confirm {
+width: 50%;
+color: #ec5300;
+text-align: center;
+}
+/*弹窗样式结束*/
+
+.blockinfo{
+  width:96%;
+  height:100rpx;
+  line-height:100rpx;
+  font-size:38rpx;
+  margin:20rpx auto;
+  border-bottom:1rpx solid #ececec;
+  background-color:#fff;
+  display:flex;
+  color:#bfbfbf;
+}

@@ -1,0 +1,79 @@
+/* pages/pub/wuliu/samecity/samecity.wxss */
+.box{
+  width: 100%;
+  margin:0 aotu;
+}
+.des_info{
+  width: 90%;
+  height:60rpx;
+  font-size:28rpx;
+  padding:10rpx;
+  margin-top:0rpx;
+  margin-bottom:20rpx;
+  margin-left:auto;
+  margin-right:auto;
+}
+.des_samecity{
+  width:100%;
+  height:400rpx;
+  margin:0 auto;
+  border-bottom:1rpx solid #c4c4c4;
+}
+
+.textarea_samecity{
+  width:90%;
+  font-size:28rpx;
+  padding:10rpx;
+}
+.select_time{
+  clear:both;
+  width:90%;
+  margin:20rpx auto;
+  height:60rpx;
+  line-height:60rpx;
+  display:flex;
+}
+.stTime{
+  width:20%;
+  height:60rpx;
+  display:inline-flex;
+  line-height:60rpx;
+}
+.edTime{
+  width:20%;
+  height:60rpx;
+  margin-left:30rpx;
+  display:inline-flex;
+  line-height:60rpx;
+}
+.show{
+  display:blok;
+}
+
+.hidden{
+  display:none;
+}
+
+/*底部菜单*/
+.footer {
+	background: #f9f9f9;
+	width: 100%;
+	display: flex; 
+	flex-direction: row; 
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+}
+
+.queding {
+	float: right;
+	line-height: 100rpx;
+	text-align: center;
+	width:100%;
+	height: 100rpx;
+	background-color:#ff8c00;
+	color: #fff;
+	font-size: 32rpx;
+	border-radius: 0px;
+}
+

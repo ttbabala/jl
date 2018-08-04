@@ -1,0 +1,51 @@
+<!--pages/search/search.wxml-->
+<view class="weui-search-bar">
+<view class="weui-search-bar__form">
+<view class="weui-search-bar__box">
+<icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+<input type="text" class="weui-search-bar__input" disabled='true' placeholder="搜索" bindtap="wxSearchTab"/>
+</view>
+</view>
+</view>
+<view class='cat-box'>
+    <view class='title'>商品分类</view>
+         <view class='cat'>
+           <view class='scat'>
+        <image src='/images/food.png' class='cat-photo'></image>
+        <text class='cat-name'>美食特产</text>
+           </view>
+            <view class='scat'>
+        <image src='/images/martherbaby.png' class='cat-photoone'></image>
+        <text class='cat-name'>母婴用品</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/yifu.png' class='cat-photo'></image>
+        <text class='cat-name'>衣装服饰</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/jiaju.png' class='cat-photo'></image>
+        <text class='cat-name'>家居生活</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/jianshen.png' class='cat-photo'></image>
+        <text class='cat-name'>运动健身</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/jiayong.png' class='cat-photo'></image>
+        <text class='cat-name'>家用电器</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/life.png' class='cat-photo'></image>
+        <text class='cat-name'>生活用品</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/meizhuang.png' class='cat-photo'></image>
+        <text class='cat-name'>美妆护肤</text>
+           </view>
+             <view class='scat'>
+        <image src='/images/qita.png' class='cat-photo'></image>
+        <text class='cat-nameone'>其他</text>
+           </view>
+    </view>
+</view>
+

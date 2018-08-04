@@ -1,0 +1,66 @@
+<!--pages/uc/uc.wxml-->
+<view class="boxone">
+   <view class="chartone">
+       <image src='/images/touxiang6.jpg' style="width:150rpx;height:150rpx;border-radius: 100rpx;" class='touxiang'></image>
+    </view>
+    <text class='name'>云朵面包</text>
+    <!-- <view class="yaoqing">
+       <text class='code'>我的邀请码：BC123456</text>
+       <text class='fuzhi'>（点击复制）</text>
+    </view> -->
+    <view class='dibu'>
+       <text class='renzheng'>实名认证，尊享特权</text>
+    </view>
+    </view>
+    <view class='boxtwo'>
+        <view class='xone'>
+            <text class='num'>0</text>
+            <text class='follow'>我的关注</text>
+        </view>
+        <view class='xtwo'>
+            <text class='num-one'>0</text>
+            <text class='follow-one'>我的粉丝</text>
+        </view>
+        <view class='xthree'>
+            <text class='num-two'>0</text>
+            <text class='follow-two'>访问</text>
+        </view>
+    </view>
+    <view class='gray-one'></view>
+
+ <!--我发起的接龙start-->
+    <view class='faqi'>
+     <view class='fbox' bindtap='navziliao'>
+        <image src='/images/gerenziliao.png' class='picture-one'></image>
+        <text class='wz' >个人资料</text>
+      </view>
+      <view class='fbox' bindtap='navorder'>
+        <image src='/images/wodedingdan.png' class='picture'></image>
+        <text class='wz' >我的订单</text>
+      </view>
+      <view class='fbox'>
+        <image src='/images/wuliushezhi.png' class='picture'></image>
+        <text class='wz'>物流设置</text>
+      </view>
+       <view class='fbox'>
+        <image src='/images/zhanghuyue.png' class='picture'></image>
+        <text class='wz'>账户余额</text>
+      </view>
+             <view class='fbox'>
+        <image src='/images/faqidejielong.png' class='picture'></image>
+        <text class='wz'>发起的接龙</text>
+      </view>
+             <view class='fbox'>
+        <image src='/images/xitongtongzhi.png' class='picture'></image>
+        <text class='wz'>系统通知</text>
+      </view>
+      <view class='fbox' bindtap='navmessages'>
+        <image src='/images/lianxikefu.png' class='picture'></image>
+        <text class='wz'>联系客服</text>
+      </view>
+       <view class='fbox' bindtap='navmessages'>
+        <image src='/images/yiwen.png' class='picture'></image>
+        <text class='wz'>帮您解疑</text>
+      </view>
+    </view>
+      

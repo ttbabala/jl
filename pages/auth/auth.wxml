@@ -1,0 +1,4 @@
+<!--pages/auth/auth.wxml-->
+<view class="auth">
+    <button open-type="getUserInfo" bindgetuserinfo="agree">同意授权</button> 
+</view>

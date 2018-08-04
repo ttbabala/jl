@@ -1,0 +1,118 @@
+<!--index.wxml-->
+<!--弹窗-->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+        <view class="modal-title">免责声明</view>
+        <view class="modal-content">
+          <view class="modal-input">
+              <textarea name="zitiInfo" auto-height><text style="letter-spacing:2rpx">{{mz_notice}}</text></textarea>
+          </view>
+        </view>
+        <view class="modal-footer">
+          <view class="btn-cancel" bindtap="onCancel" data-status="cancel">不同意</view>
+          <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">同意</view>
+        </view> 
+    </view>
+<!--弹窗结束-->
+  <!-- top搜索start -->
+    <view class="container">
+      <view class="weui-search-bar" >
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" disabled='true' placeholder="大家都在搜的商品" bindtap="navsearch"/>
+          </view>
+        </view>
+      </view>
+  <!-- top搜索end -->
+<!-- 广告 -->
+  <view class="ad">
+  <!-- <image src='/images/home-ad.jpg' style="width:100%; height:300rpx;"></image> -->
+    <swiper autoplay='true'>
+      <block>
+        <swiper-item>
+        <image src='/images/home-ad1.jpg' style="width:100%; height:300rpx;"></image> 
+        </swiper-item>
+        <swiper-item>
+        <image src='/images/home-ad2.jpg' style="width:100%; height:300rpx;"></image> 
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+<!-- 广告end -->
+
+
+ <!-- 选项卡 -->
+  <view class="tab">
+    <view bindtap="seltab_hotgoods" class="{{hotgoods?'seltab-selected':'seltab'}}">
+      <image src="{{hotgoods?'/images/paixu.png':'/images/paixu-hui.png'}}" style="width:36rpx;height:36rpx; vertical-align:middle;margin-right:10rpx;"/>
+      <view class="inseltab"></view>
+      <text>排序</text>
+    </view>    
+    <view bindtap="seltab_fjgoods" class="{{fjgoods?'seltab-selected':'seltab'}}">
+      <image src="{{fjgoods?'/images/fjgoods-blue.png':'/images/fjgoods-hui.png'}}" style="width:50rpx;height:50rpx; vertical-align:middle;margin-right:10rpx;"/>
+      <view class="inseltab"></view>
+      <text>附近接龙</text>
+    </view>
+    <view bindtap="seltab_likegoods" style="border-right:none" class="{{likegoods?'seltab-selected':'seltab'}}">
+      <image src="{{likegoods?'/images/likegoods-blue.png':'/images/likegoods-hui.png'}}" style="width:40rpx;height:40rpx; vertical-align:middle;margin-right:10rpx;"/>
+      <text>我关注的</text>
+    </view>
+  </view>
+ <!-- 选项卡 -->
+<view class="{{hotgoods?'showsx':'hiddensx'}}">
+  <view class="shaixuan {{shaixuan?'show':'hidden'}}">
+    <radio-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" style="width:20rpx;height:20rpx;margin-right:40rpx;" color="#fc8800"/>{{item.value}}
+    </label>
+    </radio-group>
+  </view>
+  <view class="shouqi" bindtap="hiddenShaiXuan">
+    <image src="{{clickinfoImg}}" style="width:40rpx;height:40rpx;position:absolute;left:40%;"></image>
+    <text style="position:absolute;left:46%;font-size:26rpx;padding-top:5rpx;color:#bfbfbf">{{clickinfo}}</text>
+  </view>
+</view>
+<!-- 原热门推荐start -->
+<view class="{{hotgoods?'show':'hidden'}}"> 
+  <block wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item">
+    <view class="row">
+        <view class="userinfo">
+            <image src="{{item.touxiang}}" class='touxiang'></image>
+            <text class="nickname">{{item.nickname}}</text>
+            <text class="Abulk">{{item.goodsZhuti}}</text>
+            <text class="time">{{item.goodsPubTime}} / 365人浏览</text>
+            <block wx:for="{{item.goodsPhoto}}" wx:for-index="pidx" wx:for-item="pitem">
+                  <image src="http://localhost/jielong/{{pitem}}" style="width:200rpx; height:200rpx;" bindtap='navgoods' data-gid="{{item.goodsId}}" class="good"></image> 
+            </block>
+            <text class="address">银川市.{{item.goodsAddressName}}</text>
+        </view>        
+    </view>
+  </block>
+</view>
+<!-- 原热门推荐end -->
+
+ <!-- 原附近接龙start -->
+  <view class="{{fjgoods?'show':'hidden'}}"> 
+    <view class="row">
+      <view class="userinfo">
+          <image src="/images/touxiang1.jpg" class='touxiang'></image>
+          <text class="nickname">hello树先生</text>
+          <text class="Abulk">产品团购</text>
+          <text class="time">07-02 / 365人浏览</text>
+        <image src="/images/goods1.jpg" style="width:200rpx; height:200rpx;" class="good" bindtap='navgoods'></image>
+        <image src="/images/goods2.jpg" style="width:200rpx; height:200rpx;" class="good" bindtap='navgoods'></image>
+        <image src="/images/goods3.jpg" style="width:200rpx; height:200rpx;" class="good" bindtap='navgoods'></image>
+        <text class="address">银川市·金凤区-万达广场</text>
+      </view>
+    </view>
+</view>
+<!-- 附近接龙end -->
+<!-- 我关注的start -->
+  <view class="{{likegoods?'show':'hidden'}}"> 
+    <text style="margin-top:60rpx;">您还没有关注的接龙</text>
+  </view>
+  <!-- 我关注的end -->
+</view>
+
+ 

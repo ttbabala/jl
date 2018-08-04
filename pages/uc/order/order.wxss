@@ -1,0 +1,24 @@
+/* pages/uc/order/order.wxss */
+.box{
+  width: 100%;
+  height:1400rpx;
+  background-color: #F4F3F3;
+}
+.p-one{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 280rpx;
+  margin-left:240rpx;
+}
+.p-two{
+  width: 690rpx;
+  height: 29rpx;
+  margin-left:50rpx;
+}
+.query{
+  width:100%;
+  height:32rpx;
+  color: #bfbfbf;
+  font-size: 25rpx;
+  margin-left: 210rpx;
+}
